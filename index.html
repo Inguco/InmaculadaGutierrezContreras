@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inma Gutierrez Contreras | Operations & Enablement</title>
+  <style>
+    :root{
+      --bg:#d9d0c3;
+      --bg-soft:#e8e0d5;
+      --surface:#efe8df;
+      --card:#f4eee6;
+      --text:#341606;
+      --muted:#5f4638;
+      --accent:#4c1a00;
+      --line:#c7b8a8;
+      --shadow:0 18px 38px rgba(63,37,19,0.10);
+      --radius:26px;
+      --max:1240px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto;}
+    .nav-wrap{
+      position:sticky; top:0; z-index:100;
+      backdrop-filter: blur(12px);
+      background:rgba(233,224,213,.86);
+      border-bottom:1px solid rgba(117,87,64,.12);
+    }
+    nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:18px; padding:16px 0;
+    }
+    .brand{
+      font-family: Georgia, "Times New Roman", serif;
+      font-size:1.35rem; font-weight:700; letter-spacing:.02em;
+    }
+    .nav-links{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .nav-links a{
+      padding:10px 14px; border-radius:999px; color:var(--muted);
+      font-weight:600; font-size:.96rem; transition:.2s ease;
+    }
+    .nav-links a:hover{background:rgba(76,26,0,.08); color:var(--accent)}
+    section{padding:72px 0; scroll-margin-top:90px;}
+    .hero-grid{
+      display:grid; grid-template-columns: 1.12fr .88fr; gap:56px; align-items:center;
+    }
+    .name{
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      line-height:1.05; margin:0 0 22px; letter-spacing:-.02em;
+    }
+    .hero-title{
+      font-weight:900; font-size: clamp(2rem, 4vw, 4rem);
+      line-height:1.14; letter-spacing:-.03em; margin:0 0 22px;
+    }
+    .hero-kicker{
+      font-size: clamp(1rem, 1.8vw, 1.55rem); font-weight:800;
+      letter-spacing:.04em; margin:0 0 26px; text-transform:uppercase;
+    }
+    .hero-points{
+      list-style:none; padding:0; margin:0 0 34px; display:grid; gap:14px;
+      color:var(--muted); font-size:1.08rem;
+    }
+    .hero-points li{
+      position:relative; padding-left:28px;
+    }
+    .hero-points li::before{
+      content:""; position:absolute; left:0; top:.58em; width:10px; height:10px;
+      border-radius:50%; background:var(--accent); box-shadow:0 0 0 6px rgba(76,26,0,.10);
+    }
+    .hero-actions{display:flex; gap:14px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:14px 22px; border-radius:14px; font-weight:800;
+      transition:.2s ease; border:1px solid var(--accent);
+    }
+    .btn.primary{background:var(--accent); color:#fff}
+    .btn.secondary{background:transparent; color:var(--accent)}
+    .btn:hover{transform:translateY(-1px); box-shadow:var(--shadow)}
+    .hero-photo{
+      background:linear-gradient(180deg, rgba(255,255,255,.25), rgba(255,255,255,0));
+      border-radius:32px; padding:18px; box-shadow:var(--shadow);
+    }
+    .hero-photo img{
+      border-radius:24px; width:100%; aspect-ratio: 1 / 1.03; object-fit:cover;
+    }
+    .section-head{margin-bottom:30px}
+    .eyebrow{
+      display:inline-block; text-transform:uppercase; letter-spacing:.12em;
+      font-size:.84rem; font-weight:800; color:var(--accent); margin-bottom:12px;
+    }
+    h2{
+      margin:0; font-size: clamp(2rem, 3.2vw, 3rem);
+      line-height:1.08; letter-spacing:-.03em;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .lead{font-size:1.12rem; color:var(--muted); margin-top:16px}
+    .two-col{display:grid; grid-template-columns: 1.02fr .98fr; gap:34px; align-items:start}
+    .panel{
+      background:var(--surface); border:1px solid rgba(76,26,0,.10);
+      border-radius:var(--radius); padding:28px; box-shadow:var(--shadow);
+    }
+    .about-strip{margin-bottom:22px; border-radius:22px; overflow:hidden; box-shadow:var(--shadow)}
+    .copy p{margin:0 0 16px; font-size:1.05rem}
+    .copy p:last-child{margin-bottom:0}
+    .focus{
+      background:linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,0) 100%), var(--surface);
+    }
+    .focus-quote{
+      font-size:1.15rem; font-weight:700; color:var(--accent); margin:0 0 20px;
+    }
+    .focus-list{list-style:none; padding:0; margin:0; display:grid; gap:14px}
+    .focus-list li{padding-left:24px; position:relative; color:var(--muted)}
+    .focus-list li::before{
+      content:""; position:absolute; left:0; top:.62em; width:8px; height:8px; border-radius:50%;
+      background:var(--accent);
+    }
+    .impact-layout{display:grid; grid-template-columns: .78fr 1.22fr; gap:32px; align-items:start}
+    .impact-image img{
+      border-radius:28px; aspect-ratio: 1 / 1; object-fit:cover; box-shadow:var(--shadow);
+    }
+    .metrics{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
+    .metric{
+      background:var(--card); border:1px solid rgba(76,26,0,.10);
+      border-radius:24px; padding:24px; box-shadow:var(--shadow);
+      min-height:210px;
+    }
+    .metric strong{
+      display:block; font-size:2.1rem; line-height:1; margin-bottom:12px; color:var(--accent);
+    }
+    .metric h3{margin:0 0 10px; font-size:1.28rem}
+    .metric p{margin:0; color:var(--muted)}
+    .experience-grid{display:grid; grid-template-columns: repeat(4,1fr); gap:18px}
+    .job{
+      background:linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.04)), var(--card);
+      border:1px solid rgba(76,26,0,.10); border-radius:20px; padding:24px;
+      box-shadow:var(--shadow);
+    }
+    .job-company{
+      font-size:1.1rem; font-weight:900; text-transform:uppercase; margin:0 0 8px;
+    }
+    .job-role{font-size:1.1rem; font-weight:800; margin:0 0 6px}
+    .job-track{color:var(--muted); font-weight:700; margin:0 0 18px}
+    .job h4{margin:0 0 10px; font-size:1.05rem; color:var(--accent)}
+    .job ul{margin:0; padding-left:18px; display:grid; gap:10px; color:var(--muted)}
+    .contact-wrap{
+      background:var(--accent); color:#f7ede4; border-radius:36px; padding:42px;
+      box-shadow:var(--shadow);
+    }
+    .contact-grid{display:grid; grid-template-columns: 1.1fr .9fr; gap:34px; align-items:center}
+    .contact-wrap h2, .contact-wrap .eyebrow{color:#fff}
+    .contact-wrap .lead, .contact-wrap p{color:#f0dfd3}
+    .contact-list{margin:22px 0 0; padding-left:18px}
+    .contact-list li{margin-bottom:12px}
+    .contact-links{display:flex; gap:14px; flex-wrap:wrap; margin-top:24px}
+    .contact-links a{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 18px; border-radius:14px; background:#f7ede4; color:var(--accent); font-weight:800;
+    }
+    .contact-image img{
+      width:100%; max-width:390px; margin-inline:auto; border-radius:30px; box-shadow:var(--shadow);
+    }
+    footer{padding:26px 0 36px; color:var(--muted); text-align:center; font-size:.95rem}
+    @media (max-width: 1100px){
+      .experience-grid{grid-template-columns:repeat(2,1fr)}
+      .hero-grid, .two-col, .impact-layout, .contact-grid{grid-template-columns:1fr}
+      .hero-photo{max-width:420px}
+      .hero-photo, .contact-image{margin-inline:auto}
+    }
+    @media (max-width: 720px){
+      .container{width:min(var(--max), calc(100% - 24px));}
+      nav{padding:14px 0}
+      .brand{font-size:1.1rem}
+      .nav-links{gap:6px}
+      .nav-links a{padding:8px 10px; font-size:.88rem}
+      section{padding:54px 0; scroll-margin-top:76px}
+      .hero-title{font-size:2.15rem}
+      .hero-kicker{font-size:.95rem}
+      .hero-points{font-size:1rem}
+      .hero-actions .btn{width:100%}
+      .metrics, .experience-grid{grid-template-columns:1fr}
+      .metric{min-height:auto}
+      .panel, .job, .metric{padding:22px}
+      .contact-wrap{padding:26px}
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <div class="container">
+      <nav>
+        <div class="brand">Inma Gutierrez Contreras</div>
+        <div class="nav-links">
+          <a href="#home">Home page</a>
+          <a href="#about">About</a>
+          <a href="#impact">Impact</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <section id="home">
+    <div class="container hero-grid">
+      <div>
+        <h1 class="name">Inma Gutierrez Contreras</h1>
+        <h2 class="hero-title">Turning complex business initiatives into structured execution</h2>
+        <p class="hero-kicker">Operations - Enablement - Cross Functional Execution</p>
+        <ul class="hero-points">
+          <li>Built operational frameworks across departments.</li>
+          <li>Created dashboards for leadership visibility.</li>
+          <li>Executed cross functional initiatives at scale.</li>
+        </ul>
+        <div class="hero-actions">
+          <a class="btn primary" href="#experience">View my work</a>
+          <a class="btn secondary" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/inma-portrait.png" alt="Portrait of Inma Gutierrez Contreras">
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Learn more about me</span>
+        <h2>Business support with an operations and enablement mindset</h2>
+        <p class="lead">I turn complexity into structure and execution.</p>
+      </div>
+      <div class="two-col">
+        <div>
+          <div class="about-strip">
+            <img src="assets/about-strip.png" alt="Notebook, sphere, desk lamp and desk details">
+          </div>
+          <div class="panel copy">
+            <p>Operating across international, cross-functional environments, I align people, processes, and priorities to move initiatives from idea to delivery.</p>
+            <p>With a Master's in International Human Resource Management, I bring a structured, business-driven approach to operations and enablement.</p>
+            <p>My experience spans Sales, IT, and Business Operations, where I've driven alignment, improved processes, and built consistency at scale.</p>
+          </div>
+        </div>
+        <div class="panel focus">
+          <p class="focus-quote">Today, I focus on structuring initiatives, building scalable frameworks, and creating visibility through clear reporting and communication.</p>
+          <ul class="focus-list">
+            <li>Translate moving parts into practical structure and follow-through.</li>
+            <li>Connect people, processes, and priorities across business areas.</li>
+            <li>Create visibility through dashboards, reporting, and communication.</li>
+            <li>Build clarity, alignment, and measurable execution.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="impact">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How I create impact</span>
+        <h2>I bring structure, visibility, and alignment to complex business environments</h2>
+      </div>
+      <div class="impact-layout">
+        <div class="impact-image">
+          <img src="assets/impact-desk.png" alt="Minimal desk setup">
+        </div>
+        <div class="metrics">
+          <article class="metric">
+            <strong>900+</strong>
+            <h3>Employees reached or impacted</h3>
+            <p>Through internal initiatives, sessions, and communication.</p>
+          </article>
+          <article class="metric">
+            <strong>Leadership</strong>
+            <h3>Dashboards and reporting</h3>
+            <p>Overviews and presentations designed to support decision making and visibility.</p>
+          </article>
+          <article class="metric">
+            <strong>Global</strong>
+            <h3>Cross-functional coordination</h3>
+            <p>Across international teams and multiple business areas.</p>
+          </article>
+          <article class="metric">
+            <strong>Systems</strong>
+            <h3>Structured tools experience</h3>
+            <p>Excel, HiBob, CRM-related tools, Business Central, Navision, and SharePoint.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Professional experience</span>
+        <h2>Let's bring structure to complexity</h2>
+      </div>
+      <div class="experience-grid">
+        <article class="job">
+          <p class="job-company">VML MAP</p>
+          <p class="job-role">Admin Coordinator</p>
+          <p class="job-track">Operations &amp; Enablement</p>
+          <h4>Impact</h4>
+          <ul>
+            <li>Built stability for leadership reporting and tracking.</li>
+            <li>Standardized internal initiatives at scale.</li>
+            <li>Contributed to programs impacting 900+ employees.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <p class="job-company">Milestone Systems</p>
+          <p class="job-role">People &amp; Culture Coordinator</p>
+          <p class="job-track">Global HR &amp; Operations</p>
+          <h4>Impact</h4>
+          <ul>
+            <li>Aligned stakeholders across regions.</li>
+            <li>Improved global alignment across initiatives.</li>
+            <li>Strengthened structured coordination.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <p class="job-company">Milestone Systems</p>
+          <p class="job-role">Sales Coordinator</p>
+          <p class="job-track">Operations &amp; Systems</p>
+          <h4>Impact</h4>
+          <ul>
+            <li>Enhanced collaboration between Sales, IT &amp; technical teams.</li>
+            <li>Supported system migration and process improvements.</li>
+            <li>Improved workflow efficiency.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <p class="job-company">IC Group</p>
+          <p class="job-role">Business Applications Support Coordinator</p>
+          <p class="job-track">Operations &amp; Business Support</p>
+          <h4>Delivery</h4>
+          <ul>
+            <li>Better cross-functional alignment across teams.</li>
+            <li>Improved system adoption and daily operational support.</li>
+            <li>Added structure and reliability to business processes.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-wrap">
+        <div class="contact-grid">
+          <div>
+            <span class="eyebrow">Do you want to get in touch?</span>
+            <h2>Let's bring structure to complexity</h2>
+            <p class="lead">If you are looking for someone who can turn ideas into structured execution, improve visibility, and help align teams around clear processes, I would love to connect.</p>
+            <ul class="contact-list">
+              <li>Based in Copenhagen, Denmark.</li>
+              <li>Open to opportunities in operations, enablement, business support, and internal strategy &amp; execution-focused roles.</li>
+              <li>Email: inmaculada.g.contreras@gmail.com</li>
+              <li>LinkedIn: add your profile link here.</li>
+            </ul>
+            <div class="contact-links">
+              <a href="mailto:inmaculada.g.contreras@gmail.com">Email me</a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+          </div>
+          <div class="contact-image">
+            <img src="assets/contact-sphere.png" alt="Glass sphere close-up">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Built from your original PDF layout and section flow, optimized for desktop and mobile.
+  </footer>
+</body>
+</html>
